@@ -51,6 +51,8 @@ export default function App() {
     listAllVoiceOptions();
   }, [quote]);
 
+
+
   // PLAY VOICE
   const speakNow = () => {
     Speech.speak(quote, { voice: voiceSelected });
@@ -74,7 +76,7 @@ export default function App() {
 
   return (
     <View style={Styles.container}>
-      <SafeAreaView style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1, marginBottom: 20 }}>
         <ScrollView style={Styles.containerQuotes}>
           {/* HEADING */}
           <Text style={Styles.quoteHeading}>La Citation du Jour</Text>
@@ -114,18 +116,22 @@ export default function App() {
           </Picker>
 
           {/* OTHER BUTTONS */}
-          <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 5 }}>
-            {/* Play */}
-            <ButtonPlayShare onPress={speakNow} iconName='play' textBtnDescription='PLAY' />
+          <View style={{ flexDirection: 'column', justifyContent: 'space-around', marginBottom: 5 }}>
+            <View style={{ flexDirection: 'row', justifyContent: 'center', marginBottom: 2, gap: 30 }}>
+              {/* Play */}
+              <ButtonPlayShare onPress={speakNow} iconName='play' textBtnDescription='PLAY' />
 
-            {/* Stop */}
-            <ButtonPlayShare onPress={speakStop} iconName='stop' textBtnDescription="STOP" />
+              {/* Stop */}
+              <ButtonPlayShare onPress={speakStop} iconName='stop' textBtnDescription="STOP" />
+            </View>
 
-            {/* Copy Text */}
-            <ButtonPlayShare onPress={copyToClipboard} iconName='copy' textBtnDescription="COPIER" />
+            <View style={{ flexDirection: 'row', justifyContent: 'space-around', marginBottom: 8, gap: 55 }}>
+              {/* Copy Text */}
+              <ButtonPlayShare onPress={copyToClipboard} iconName='copy' textBtnDescription="COPIER" />
 
-            {/* Share on Twitter */}
-            <ButtonPlayShare onPress={tweetNow} iconName='twitter' textBtnDescription="Partager sur Twitter" />
+              {/* Share on Twitter */}
+              <ButtonPlayShare onPress={tweetNow} iconName='twitter' textBtnDescription="PARTAGER" />
+            </View>
           </View>
         </ScrollView>
       </SafeAreaView>

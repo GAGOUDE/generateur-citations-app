@@ -12,7 +12,8 @@ const Styles = {
         height: "auto",
         backgroundColor: '#fff',
         borderRadius: 20,
-        padding: 20,
+        paddingBottom: 60,
+        paddingHorizontal: 20,
         marginTop: 20,
         marginBottom: 5
     },
@@ -22,6 +23,7 @@ const Styles = {
         fontWeight: '600',
         color: '#333',
         marginBottom: 20,
+        marginTop: 20
     },
     quoteText: {
         color: '#000',
@@ -65,7 +67,8 @@ const Styles = {
     selectVoiceLabel: {
         color: "gray",
         marginBottom: 5,
-        fontStyle: "italic"
+        fontStyle: "italic",
+        display: "none"
     },
     selectVoice: {
         width: "100%",
@@ -76,7 +79,8 @@ const Styles = {
         marginTop: 2,
         marginBottom: 5,
         marginRight: "auto",
-        marginLeft: "auto"
+        marginLeft: "auto",
+        display: "none"
     },
     textBtnDescription: {
         marginTop: 5,
